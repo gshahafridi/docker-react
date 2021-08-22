@@ -3,6 +3,7 @@ language: generic
 services:
   - docker
 
-befor_install: -docker build -t gshahafridi/docker-react -f Dockerfile.dev .
+befor_install:
+  - docker build -t gshahafridi/docker-react -f Dockerfile.dev .
 script:
   - docker run -e CI=true gshahafridi/docker-react npm run test
